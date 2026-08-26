@@ -251,7 +251,7 @@ video::IImage *TextureSource::getOrGenerateImage(const std::string &name,
 
 video::IImage *TextureSource::getImage(const std::string &name)
 {
-	if (!isKnownSourceImage(name))
+	if (name.empty())
 		return nullptr;
 	assert(std::this_thread::get_id() == m_main_thread);
 	std::set<std::string> source_image_names;
